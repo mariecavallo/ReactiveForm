@@ -1,0 +1,101 @@
+<div class="container">
+  <h4> Information</h4>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <!--Nom et Prénom-->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fas fa-user"></i>
+        </span>
+      </div>
+      <input type="text" class="form-control" placeholder="Prénom" aria-label="FirstName" aria-describedby="basic-addon1" formControlName="firstName"
+        >
+      <input type="text" class="form-control" placeholder="Nom" aria-label="LastName" aria-describedby="basic-addon1" formControlName="lastName"
+         style="margin-left : 6px;">
+    </div>
+
+    <!--Email-->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fas fa-at"></i>
+        </span>
+      </div>
+      <input type="email" class="form-control" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1" formControlName="email"
+        >
+    </div>
+
+    <!--Telephone-->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fas fa-phone"></i>
+        </span>
+      </div>
+      <input type="tel" class="form-control" placeholder="Téléphone" aria-label="téléphone" aria-describedby="basic-addon1" formControlName="phone">
+    </div>
+
+    <!--Mot de passe-->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="fas fa-unlock"></i>
+        </span>
+      </div>
+      <input type="password" class="form-control" placeholder="Mot de passe" aria-label="password" aria-describedby="basic-addon1"
+        formControlName="password" >
+    </div>
+
+        <!--Mot de passe-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fas fa-unlock"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" placeholder="Confimez le mot de passe" aria-label="password" aria-describedby="basic-addon1"
+              formControlName="passwordConfirm" >
+          </div>
+
+    <div formGroupName="address">
+
+      <h5>Adresse</h5>
+
+      <!--Street-->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+              <i class="fas fa-map-marker-alt"></i>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Rue" aria-label="rue" aria-describedby="basic-addon1" formControlName="street"
+          >
+      </div>
+
+      <!--Ville et Code Postal-->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+              <i class="fas fa-map-marker-alt"></i>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Ville" aria-label="ville" aria-describedby="basic-addon1" formControlName="city"
+          >
+          <input type="text" class="form-control" placeholder="Code Postal" aria-label="codepostal" aria-describedby="basic-addon1"
+          formControlName="zip"  style="margin-left : 6px;">
+      </div>
+
+    </div>
+
+
+
+<div class="d-flex justify-content-center">
+  <button class="btn btn-info" type="submit" [disabled]="!profileForm.valid">Envoyer</button>
+</div>
+    
+
+  </form>
+
+</div>
